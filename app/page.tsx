@@ -1,8 +1,11 @@
 export default function HomePage() {
     return (
-        <div>
-            <h1 className="text-3xl">Home Page</h1>
-            <p>Some Content</p>
+        <div className="w-screen flex flex-col justify-center items-center">
+            <div className="w-1/2 my-20">
+                <div className="mockup-code">
+                    <pre><code>without prefix</code></pre>
+                </div>
+            </div>
         </div>
     );
 }
