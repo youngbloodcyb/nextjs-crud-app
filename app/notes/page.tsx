@@ -12,12 +12,12 @@ export default async function NotesPage() {
     const notes = await getNotes();
     return (
         <div className="flex justify-center items-center flex-col">
-            <div className="flex flex-row gap-10 flex-wrap justify-center">
+            <CreateNote />
+            <div className="flex flex-row gap-10 flex-wrap justify-center my-10">
                 {notes?.map((note) => {
                     return <Note key={note.id} note={note} />;
                 })}
             </div>
-            <CreateNote />
         </div>
     );
 }
