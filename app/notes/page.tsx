@@ -11,9 +11,8 @@ async function getNotes() {
 export default async function NotesPage() {
     const notes = await getNotes();
     return (
-        <div>
-            <h1>Notes</h1>
-            <div>
+        <div className="flex justify-center items-center flex-col">
+            <div className="flex flex-row gap-10 flex-wrap justify-center">
                 {notes?.map((note) => {
                     return <Note key={note.id} note={note} />;
                 })}
@@ -28,11 +27,15 @@ function Note({ note }: any) {
 
     return (
         <Link href={`/notes/${id}`}>
-            <div>
-                <h2>{title}</h2>
-                <h5>{content}</h5>
-                <p>{created}</p>
-            </div>
+            <div className="card w-96 bg-blue-300 shadow-xl">
+                <div className="card-body">
+                    <h2 className="card-title">{title}</h2>
+                    <p>{content}</p>
+                    <p>{created}</p>
+                    <div className="card-actions justify-end">
+                    </div>
+                </div>
+            </div>  
         </Link>
     )
 }
